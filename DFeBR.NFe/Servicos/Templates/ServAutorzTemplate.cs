@@ -263,21 +263,23 @@ namespace DFeBR.EmissorNFe.Servicos.Templates
         /// <param name="enviNFe"></param>
         /// <param name="contingencia">True, enviado em contingência</param>
         /// <returns></returns>
+
+
         private RetAutorz RetornoProcessamento(string xmlRecebido, enviNFe enviNFe, bool contingencia)
         {
             var xmlRecebidoTratado = Utils.ObterNodeDeStringXml("retEnviNFe", xmlRecebido);
             var retorno1 = Utils.ConverterXMLParaClasse<retEnviNFe>(xmlRecebidoTratado);
             _processadas++;
-            if (retorno1.protNFe == null) 
+            if (retorno1.protNFe == null)
                 _rejeitadas++;
             if (retorno1.protNFe != null)
-                if (StatusSefaz.ListarCodigo.All(n => retorno1.protNFe.infProt.All(m=>m.cStat!=n.Key)))
+                if (StatusSefaz.ListarCodigo.All(n => retorno1.protNFe.infProt.All(m => m.cStat != n.Key)))
                     _rejeitadas++;
-           
+
             var xmlEnviado = Utils.ObterStringXML(enviNFe);
             var retorno2 = new RetAutorz(retorno1, xmlRecebidoTratado, _processadas, _rejeitadas, xmlEnviado, contingencia);
             SalvarArquivoLoteRecebidos(retorno2);
-              
+
             return retorno2;
         }
 
