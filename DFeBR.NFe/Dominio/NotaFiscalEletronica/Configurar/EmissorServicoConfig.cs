@@ -109,7 +109,7 @@ namespace DFeBR.EmissorNFe.Dominio.NotaFiscalEletronica.Configurar
             if (Emitente == null)
                 throw new FalhaValidacaoException("Emitente não informado");
             if (string.IsNullOrEmpty(Emitente.xNome))
-                throw new FalhaValidacaoException("A razão social (xNome) do emitente são obrigatórios");
+                throw new FalhaValidacaoException("A razão social (xNome) do emitente é obrigatório");
             if (!string.IsNullOrEmpty(Emitente.IE))
             {
                 string ie = Emitente.IE;
