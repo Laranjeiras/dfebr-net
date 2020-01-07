@@ -48,7 +48,6 @@ namespace DFeBR.EmissorNFe.Servicos.VersaoNFe4
         public ServNFe4(EmissorServicoConfig emissorConfig)
         {
             EmissorConfig = emissorConfig ?? throw new ArgumentNullException(nameof(emissorConfig));
-            EmissorConfig = emissorConfig;
             //Setar dados de configuração do serviço apropriado para NFe 4.0
             EmissorConfig.VersaoServico = VersaoServico.Ve400;
             //Obter certificado Digital
