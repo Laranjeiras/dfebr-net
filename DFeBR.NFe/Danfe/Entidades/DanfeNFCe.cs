@@ -109,7 +109,7 @@ namespace DFeBR.EmissorNFe.Danfe.Entidades
         /// <param name="numeroDocumento">numero do documento</param>
         /// <param name="status">Status</param>
         /// <param name="produtos">Produtos</param>
-        /// <param name="ambiente">True, ambiente de produção</param>
+        /// <param name="ambienteProducao">True, ambiente de produção</param>
         /// <param name="pagamento">Pagamentos</param>
         /// <param name="infAdicionais">Informações adicinoais</param>
         /// <param name="serie">Número de série</param>
@@ -121,7 +121,7 @@ namespace DFeBR.EmissorNFe.Danfe.Entidades
         /// <param name="strQrCode">string QrCode</param>
         /// <param name="creditos">Créditos</param>
         public DanfeNFCe(Emitente emitente, bool emitidaEmContigencia, string numeroDocumento, Status status,
-                ICollection<ProdutoNFCe> produtos, bool ambiente, Pagamento pagamento, string dadosTributos, string infAdicionais,
+                ICollection<ProdutoNFCe> produtos, bool ambienteProducao, Pagamento pagamento, string dadosTributos, string infAdicionais,
                 string serie, DateTime dataEmissao, string urlConsulta, string chave, Destinatario destinatario, string numProt,
                 string strQrCode, string creditos)
         {
@@ -130,7 +130,7 @@ namespace DFeBR.EmissorNFe.Danfe.Entidades
             NumeroDocumento = numeroDocumento;
             Status = status;
             Produtos = produtos;
-            Producao = ambiente;
+            Producao = ambienteProducao;
             Pagamento = pagamento;
             DadosTributos = dadosTributos;
             InfAdicionais = infAdicionais;
@@ -148,13 +148,13 @@ namespace DFeBR.EmissorNFe.Danfe.Entidades
         /// 
         /// </summary>
         /// <param name="nfe"></param>
-        /// <param name="ambiente">True, ambiente de produção</param>
+        /// <param name="ambienteProducao">True, ambiente de produção</param>
         /// <param name="emitidaEmContigencia">True, emitida em contingência</param>
         /// <param name="status">Status</param>
         /// <param name="numProt">Numero do protocolo</param>
         /// <param name="creditos">Créditos</param>
         /// <param name="logo">Logo marcar em string Base64</param>
-        public DanfeNFCe(NFe nfe, bool ambiente, bool emitidaEmContigencia, Status status, string numProt = "",
+        public DanfeNFCe(NFe nfe, bool ambienteProducao, bool emitidaEmContigencia, Status status, string numProt = "",
                 string creditos = "", string logo = "")
         {
             //TODO:Criar teste unitario usando o novo construtor [DanfeNFe] 
@@ -181,7 +181,7 @@ namespace DFeBR.EmissorNFe.Danfe.Entidades
             #endregion
 
             Produtos = produtos;
-            Producao = ambiente;
+            Producao = ambienteProducao;
 
             #region Pagamento
 
