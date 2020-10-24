@@ -14,6 +14,7 @@
 #endregion
 
 using DFeBR.EmissorNFe.Utilidade.Tipos;
+using System;
 
 namespace DFeBR.EmissorNFe.Dominio.NotaFiscalEletronica.Protocolo
 {
@@ -39,7 +40,7 @@ namespace DFeBR.EmissorNFe.Dominio.NotaFiscalEletronica.Protocolo
         /// <summary>
         ///     PR08 - Data e hora de recebimento
         /// </summary>
-        public string dhRecbto { get; set; }
+        public DateTime dhRecbto { get; set; }
 
         /// <summary>
         ///     PR09 - Número do Protocolo da NF-e
