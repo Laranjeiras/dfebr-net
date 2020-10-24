@@ -3,7 +3,7 @@
 namespace DFeBR.EmissorNFe.Builders.Total
 {
     public sealed class TotalNFe40 : TotalNFe
-    {
+    {        
         public TotalNFe40(decimal vBC, decimal vICMS,
             decimal? vICMSDeson, decimal? vFCPUFDest,
             decimal? vICMSUFDest, decimal? vICMSUFRemet,
@@ -41,6 +41,11 @@ namespace DFeBR.EmissorNFe.Builders.Total
                 vNF = vNF,
                 vTotTrib = vTotTrib
             });
+        }
+
+        public TotalNFe40(ICMSTot icmsTot)
+        {
+            SetTotal(icmsTot);
         }
     }
 }
