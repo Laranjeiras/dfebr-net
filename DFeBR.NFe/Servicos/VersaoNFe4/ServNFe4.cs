@@ -131,6 +131,26 @@ namespace DFeBR.EmissorNFe.Servicos.VersaoNFe4
             return n2.Executar();
         }
 
+        public IRetConsProt ConsultarPelaChave(string chave) 
+        {
+            var modeloDoc = ModeloDocumento(chave.Substring(20, 2));
+            return ConsultarPelaChave(chave, true, modeloDoc);
+        }
+
+        /// <summary>
+        ///     Consultar NFe por sua Chave
+        /// </summary>
+        /// <param name="documento">Uma chave Nfe ou uma Xml Nfe bem formada</param>
+        /// <param name="pelaChave">True, pesquisar pela chave, False pesquisar por um documento Xml bem formado </param>
+        /// <param name="modelo">Modelo do documento 55 ou 65</param>
+        public IRetConsProt ConsultarPelaChave(string documento, bool pelaChave, ModeloDocumento modelo)
+        {
+            var docProc = pelaChave ? DocumentoProtocolo.Chave : DocumentoProtocolo.Xml;
+            var n2 = new ServConsProtNfe4(EmissorConfig, X509Certificate2,
+                documento, VersaoServico.Ve400, docProc, modelo);
+            return n2.Executar();
+        }
+
         /// <summary>
         ///     Consultar NFe por sua Chave
         /// </summary>
@@ -140,10 +160,7 @@ namespace DFeBR.EmissorNFe.Servicos.VersaoNFe4
         public IRetConsProt ConsultarPelaChave(string documento, bool pelaChave, string modelo)
         {
             var modeloDoc = ModeloDocumento(modelo);
-            var docProc = pelaChave ? DocumentoProtocolo.Chave : DocumentoProtocolo.Xml;
-            var n2 = new ServConsProtNfe4(EmissorConfig, X509Certificate2,
-                documento, VersaoServico.Ve400, docProc, modeloDoc);
-            return n2.Executar();
+            return ConsultarPelaChave(documento, pelaChave, modeloDoc);
         }
 
         /// <summary>
