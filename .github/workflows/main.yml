@@ -1,0 +1,29 @@
+name: DFeBR (laranjeiras) + Pack + Push to NuGet
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  pack-push:
+    env:
+      PROJECT_PATH: ./DFeBR.NFe/DFeBR.EmissorNFe.csproj
+      
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup DFeBR Laranjeiras
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.0
+
+    - name: Packet generator
+      run: dotnet pack ${{ env.PROJECT_PATH }} -c Release -o out
+
+    - name: Push to NuGet
+      run: |
+        cd out
+        dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source ${{ secrets.NUGET_SERVER }} --skip-duplicate
