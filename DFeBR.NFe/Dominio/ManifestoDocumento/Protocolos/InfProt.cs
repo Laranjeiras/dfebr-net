@@ -1,4 +1,13 @@
-﻿using DFeBR.EmissorNFe.Dominio.Assinatura;
+﻿// =============================================================
+// DFeBR - Documentos Fiscais Eletrônicos em .Net
+// Projeto: DFeBR.NFe
+// Autor: 
+// Alexandre Laranjeiras (laranja22@hotmail.com)
+// Data Criação: 27/10/2020
+// Todos os direitos reservados
+// =============================================================
+
+using DFeBR.EmissorNFe.Dominio.Assinatura;
 using DFeBR.EmissorNFe.Utilidade.Tipos;
 using System;
 using System.Xml.Serialization;
