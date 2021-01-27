@@ -118,6 +118,11 @@ namespace DFeBR.EmissorNFe.Danfe
             return new Documento { Html = str1 };
         }
 
+        public string ObterUrlQrCode()
+        {
+            return _danfeNfCe.StrQrCode;
+        }
+
         #endregion
 
 
@@ -326,7 +331,9 @@ namespace DFeBR.EmissorNFe.Danfe
             list.Add("#TotalValue#", entidade.Pagamento.ValorTotal.FormatarNumeroDanfe());
             list.Add("#TotalDiscount#", entidade.Pagamento.ValorTotDesconto.FormatarNumeroDanfe());
             list.Add("#TotalDue#", entidade.Pagamento.ValorTotDevido.FormatarNumeroDanfe());
-            list.Add("#ValorTroco#", entidade.Pagamento.Troco.Value.FormatarNumeroDanfe());
+
+            var troco = entidade.Pagamento.Troco ?? 0;
+            list.Add("#ValorTroco#", troco.FormatarNumeroDanfe());
 
             if (entidade.Pagamento.Troco == null)
                 list.Add("#StyleTroco#", "style=\"display: none;\"");
