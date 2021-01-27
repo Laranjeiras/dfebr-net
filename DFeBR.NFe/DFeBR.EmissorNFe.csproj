@@ -3,16 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors></Authors>
-    <Product>EmissorNFe</Product>
+    <Product>Emissor de documentos fiscais</Product>
     <Description>Novo framework para emissão e logística de documentos fiscais para a plataforma .NET, compatível com .NET Core e .NET 4.x</Description>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <PackageLicenseUrl>https://github.com/dfebr/dfebr-net</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/dfebr/dfebr-net</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/dfebr/dfebr-net</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/laranjeiras/dfebr-net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/laranjeiras/dfebr-net</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
-    <PackageTags>DFeBR</PackageTags>
-    <PackageReleaseNotes>Primeiro BETA Publico
-Compilado por Alexandre Laranjeiras</PackageReleaseNotes>
+    <PackageTags>DFeBR NFe NFCe MDFe</PackageTags>
+    <PackageReleaseNotes>Compilado por Alexandre Laranjeiras</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIconUrl>https://github.com/dfebr/dfebr-net/blob/master/Logo-DFeBr.png?raw=true</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
